@@ -573,3 +573,292 @@ print(delete_contact("Alice"))
 This structured approach ensures you grasp Python’s core concepts efficiently. 🚀
 
 
+
+### **📚 Additional Resources**
+- [Python Documentation](https://docs.python.org/3/)
+- [W3Schools Python Tutorial](https://www.w3schools.com/python/)
+- [Codecademy Python Course](https://www.codecademy.com/learn/learn-python) for more in-depth learning. 📚
+
+---
+
+# **📌 Week 3: Object-Oriented Programming (OOP) in Python**
+**Objective:** Learn how to use OOP concepts to write modular, reusable, and efficient code in Python.
+
+---
+
+## **1️⃣ Introduction to Object-Oriented Programming (OOP)**
+Object-Oriented Programming (OOP) is a programming paradigm that organizes code around objects rather than actions. It focuses on:
+- **Encapsulation** (hiding data)
+- **Abstraction** (simplifying complexity)
+- **Inheritance** (reusing code)
+- **Polymorphism** (using common methods across different classes)
+
+---
+
+## **2️⃣ Classes and Objects**
+### **🔹 Defining a Class**
+A **class** is a blueprint for creating objects.
+
+```python
+class Car:
+    def __init__(self, brand, model, year):  # Constructor
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def display_info(self):  # Method
+        print(f"{self.brand} {self.model} ({self.year})")
+
+# Creating objects (instances)
+car1 = Car("Toyota", "Corolla", 2020)
+car2 = Car("Honda", "Civic", 2022)
+
+# Calling methods
+car1.display_info()  # Output: Toyota Corolla (2020)
+car2.display_info()  # Output: Honda Civic (2022)
+```
+
+### **🔹 `self` Keyword**
+The `self` keyword refers to the instance of the class. It allows access to attributes and methods.
+
+---
+
+## **3️⃣ Encapsulation (Hiding Data)**
+Encapsulation **restricts direct access** to variables to protect data.
+
+### **🔹 Private Variables**
+In Python, private variables are **indicated** with an underscore `_` or `__` (double underscore).
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private variable
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+# Usage
+account = BankAccount(1000)
+account.deposit(500)
+print(account.get_balance())  # Output: 1500
+```
+✅ You **cannot** access `__balance` directly (e.g., `account.__balance`).
+
+---
+
+## **4️⃣ Inheritance (Reusing Code)**
+Inheritance allows a class to **inherit attributes and methods** from another class.
+
+### **🔹 Creating a Parent Class**
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} makes a sound.")
+```
+
+### **🔹 Creating a Child Class**
+```python
+class Dog(Animal):
+    def speak(self):  # Overriding method
+        print(f"{self.name} barks.")
+
+dog = Dog("Buddy")
+dog.speak()  # Output: Buddy barks.
+```
+✅ The `Dog` class **inherits** from `Animal` but **overrides** the `speak` method.
+
+---
+
+## **5️⃣ Polymorphism (Same Method, Different Behavior)**
+Polymorphism allows different classes to **use the same method name but implement different behaviors**.
+
+```python
+class Bird:
+    def move(self):
+        print("Flies in the sky")
+
+class Fish:
+    def move(self):
+        print("Swims in the water")
+
+# Using polymorphism
+for animal in [Bird(), Fish()]:
+    animal.move()
+```
+✅ Both classes have a `move()` method but **different behaviors**.
+
+---
+
+## **6️⃣ Abstraction (Hiding Implementation)**
+Abstraction allows **hiding details** and **exposing only essential features**.
+
+### **🔹 Using Abstract Classes**
+Abstract classes **cannot be instantiated** and must be subclassed.
+
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass  # Must be implemented in child classes
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+circle = Circle(5)
+print(circle.area())  # Output: 78.5
+```
+✅ The `Shape` class **enforces** that all subclasses must define `area()`.
+
+---
+
+## **7️⃣ `super()` Keyword (Calling Parent Methods)**
+The `super()` function **calls methods from the parent class**.
+
+```python
+class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def start(self):
+        print("Starting the vehicle...")
+
+class Car(Vehicle):
+    def __init__(self, brand, model):
+        super().__init__(brand)  # Call parent constructor
+        self.model = model
+
+    def start(self):
+        super().start()  # Call parent method
+        print(f"{self.brand} {self.model} is now running.")
+
+car = Car("Toyota", "Camry")
+car.start()
+```
+✅ Output:
+```
+Starting the vehicle...
+Toyota Camry is now running.
+```
+
+---
+
+## **8️⃣ Class and Static Methods**
+### **🔹 Class Methods (`@classmethod`)**
+- Used when a method **modifies** the class state.
+
+```python
+class Company:
+    employees = 0
+
+    @classmethod
+    def add_employee(cls):
+        cls.employees += 1
+
+Company.add_employee()
+print(Company.employees)  # Output: 1
+```
+
+### **🔹 Static Methods (`@staticmethod`)**
+- Used when a method **does not depend** on the class state.
+
+```python
+class MathUtils:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+print(MathUtils.add(5, 3))  # Output: 8
+```
+
+---
+
+## **9️⃣ Magic Methods (`__init__`, `__str__`, `__len__`)**
+Python provides special methods called **dunder (double underscore) methods**.
+
+### **🔹 `__str__` (String Representation)**
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return f"{self.name}, {self.age} years old"
+
+person = Person("Alice", 25)
+print(person)  # Output: Alice, 25 years old
+```
+
+### **🔹 `__len__` (Custom Length Calculation)**
+```python
+class Team:
+    def __init__(self, members):
+        self.members = members
+
+    def __len__(self):
+        return len(self.members)
+
+team = Team(["Alice", "Bob", "Charlie"])
+print(len(team))  # Output: 3
+```
+
+---
+
+# **🚀 Hands-on Exercises**
+✅ **Create a Student Management System**
+```python
+class Student:
+    def __init__(self, name, age, grade):
+        self.name = name
+        self.age = age
+        self.grade = grade
+
+    def get_grade(self):
+        return self.grade
+
+class Course:
+    def __init__(self, course_name):
+        self.course_name = course_name
+        self.students = []
+
+    def add_student(self, student):
+        self.students.append(student)
+
+    def get_average_grade(self):
+        total = sum(student.get_grade() for student in self.students)
+        return total / len(self.students)
+
+# Usage
+s1 = Student("Alice", 20, 85)
+s2 = Student("Bob", 22, 90)
+s3 = Student("Charlie", 21, 88)
+
+course = Course("Python Programming")
+course.add_student(s1)
+course.add_student(s2)
+course.add_student(s3)
+
+print(course.get_average_grade())  # Output: 87.67
+```
+
+---
+
+# **🔚 Summary**
+- **Encapsulation** – Restrict access to variables.
+- **Inheritance** – Reuse code from parent classes.
+- **Polymorphism** – Define common methods in multiple classes.
+- **Abstraction** – Hide implementation details.
+- **Magic Methods** – Customize object behavior.
+
+Mastering OOP in Python helps build scalable, modular applications. 🚀
