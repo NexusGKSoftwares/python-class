@@ -1292,3 +1292,75 @@ By mastering these advanced Python concepts, you’ll be well-prepared to build 
 | **Week 4: Advanced Python Concepts**         | ✅ Exception Handling (Try/Except/Finally) <br> ✅ File Handling (Reading, Writing, Appending) <br> ✅ Regular Expressions (`re` module) <br> ✅ Decorators (Modifying Functions) <br> ✅ Generators (`yield` for efficient iteration) <br> ✅ Multithreading (Parallel Execution) <br> ✅ Database Handling with SQLite3 | 🔹 Implement exception handling for input validation <br> 🔹 Extract email addresses from a text file using regex <br> 🔹 Write a decorator to log function execution time <br> 🔹 Use a generator to yield Fibonacci numbers <br> 🔹 Create an SQLite database to store user details | 🎯 **Final Project (Choose One)**: <br> 🔹 To-Do List App <br> 🔹 Expense Tracker <br> 🔹 Simple Chatbot <br> 🔹 File Organizer |
 
 This table provides a structured overview of your **Python learning path**, ensuring **gradual skill-building** from basic data structures to advanced programming concepts. 🚀🔥
+
+
+
+# **📌 Python Learning Reference Resources (Week 1 - Week 4) with Direct URLs**  
+
+Here are the best reference resources for each week, including official documentation, tutorials, and YouTube courses.  
+
+---
+
+## **📌 Week 1: Python Fundamentals**  
+### **🔹 Reference Resources**  
+✅ **Python Official Documentation:** [https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/)  
+✅ **W3Schools Python Tutorial:** [https://www.w3schools.com/python/](https://www.w3schools.com/python/)  
+✅ **GeeksforGeeks Python Basics:** [https://www.geeksforgeeks.org/python-programming-language/](https://www.geeksforgeeks.org/python-programming-language/)  
+✅ **Real Python Guide for Beginners:** [https://realpython.com/python-beginner-guide/](https://realpython.com/python-beginner-guide/)  
+✅ **Harvard’s CS50P (Python Course):** [https://cs50.harvard.edu/python/](https://cs50.harvard.edu/python/)  
+
+### **🔹 YouTube Tutorials**  
+🎥 **Python Crash Course (Programming with Mosh):** [https://youtu.be/_uQrJ0TkZlc](https://youtu.be/_uQrJ0TkZlc)  
+🎥 **Python for Beginners (freeCodeCamp):** [https://youtu.be/rfscVS0vtbw](https://youtu.be/rfscVS0vtbw)  
+🎥 **Python Full Course (Bro Code):** [https://youtu.be/XKHEtdqhLK8](https://youtu.be/XKHEtdqhLK8)  
+
+---
+
+## **📌 Week 2: Lists, Functions & File Handling**  
+### **🔹 Reference Resources**  
+✅ **Python Lists & Tuples (W3Schools):** [https://www.w3schools.com/python/python_lists.asp](https://www.w3schools.com/python/python_lists.asp)  
+✅ **Python Dictionaries (W3Schools):** [https://www.w3schools.com/python/python_dictionaries.asp](https://www.w3schools.com/python/python_dictionaries.asp)  
+✅ **Python Functions (GeeksforGeeks):** [https://www.geeksforgeeks.org/python-functions/](https://www.geeksforgeeks.org/python-functions/)  
+✅ **File Handling in Python (Real Python):** [https://realpython.com/read-write-files-python/](https://realpython.com/read-write-files-python/)  
+✅ **Exception Handling (W3Schools):** [https://www.w3schools.com/python/python_try_except.asp](https://www.w3schools.com/python/python_try_except.asp)  
+
+### **🔹 YouTube Tutorials**  
+🎥 **Python Data Structures (Bro Code):** [https://youtu.be/J8dkgM8Mck0](https://youtu.be/J8dkgM8Mck0)  
+🎥 **Functions in Python (Programming with Mosh):** [https://youtu.be/9Os0o3wzS_I](https://youtu.be/9Os0o3wzS_I)  
+🎥 **File Handling in Python (freeCodeCamp):** [https://youtu.be/uhSXqzZ4jH8](https://youtu.be/uhSXqzZ4jH8)  
+
+---
+
+## **📌 Week 3: Object-Oriented Programming (OOP) & APIs**  
+### **🔹 Reference Resources**  
+✅ **OOP Concepts (W3Schools):** [https://www.w3schools.com/python/python_classes.asp](https://www.w3schools.com/python/python_classes.asp)  
+✅ **Python Classes & Objects (GeeksforGeeks):** [https://www.geeksforgeeks.org/python-classes-and-objects/](https://www.geeksforgeeks.org/python-classes-and-objects/)  
+✅ **Python API Requests (Real Python):** [https://realpython.com/python-requests/](https://realpython.com/python-requests/)  
+✅ **Web Scraping with BeautifulSoup (GeeksforGeeks):** [https://www.geeksforgeeks.org/beautifulsoup-installation-python/](https://www.geeksforgeeks.org/beautifulsoup-installation-python/)  
+
+### **🔹 YouTube Tutorials**  
+🎥 **OOP in Python (Programming with Mosh):** [https://youtu.be/JeznW_7DlB0](https://youtu.be/JeznW_7DlB0)  
+🎥 **Python API Requests (freeCodeCamp):** [https://youtu.be/zbT6UQnTzUE](https://youtu.be/zbT6UQnTzUE)  
+🎥 **Web Scraping with Python (freeCodeCamp):** [https://youtu.be/XVv6mJpFOb0](https://youtu.be/XVv6mJpFOb0)  
+
+---
+
+## **📌 Week 4: Advanced Concepts & Final Project**  
+### **🔹 Reference Resources**  
+✅ **Exception Handling (Real Python):** [https://realpython.com/python-exceptions/](https://realpython.com/python-exceptions/)  
+✅ **Python Regular Expressions (W3Schools):** [https://www.w3schools.com/python/python_regex.asp](https://www.w3schools.com/python/python_regex.asp)  
+✅ **Decorators in Python (GeeksforGeeks):** [https://www.geeksforgeeks.org/decorators-in-python/](https://www.geeksforgeeks.org/decorators-in-python/)  
+✅ **Generators in Python (Real Python):** [https://realpython.com/introduction-to-python-generators/](https://realpython.com/introduction-to-python-generators/)  
+✅ **Multithreading in Python (GeeksforGeeks):** [https://www.geeksforgeeks.org/multithreading-python-set-1/](https://www.geeksforgeeks.org/multithreading-python-set-1/)  
+✅ **Database Handling (SQLite in Python) (Real Python):** [https://realpython.com/python-sql-libraries/](https://realpython.com/python-sql-libraries/)  
+
+### **🔹 YouTube Tutorials**  
+🎥 **Python Error Handling (Programming with Mosh):** [https://youtu.be/NIWwJbo-9_8](https://youtu.be/NIWwJbo-9_8)  
+🎥 **Regular Expressions in Python (freeCodeCamp):** [https://youtu.be/K8L6KVGG-7o](https://youtu.be/K8L6KVGG-7o)  
+🎥 **Multithreading in Python (Tech With Tim):** [https://youtu.be/WJmvzivkVNo](https://youtu.be/WJmvzivkVNo)  
+🎥 **SQLite Database in Python (freeCodeCamp):** [https://youtu.be/pd-0G0MigUA](https://youtu.be/pd-0G0MigUA)  
+
+---
+
+## 🎯 **Final Note**  
+This collection of resources will guide you through **beginner to advanced** Python concepts. 🚀 Use these references and tutorials to strengthen your **Python programming skills** and complete your projects effectively! 🔥
