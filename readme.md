@@ -862,3 +862,287 @@ print(course.get_average_grade())  # Output: 87.67
 - **Magic Methods** – Customize object behavior.
 
 Mastering OOP in Python helps build scalable, modular applications. 🚀
+
+# **📌 Week 4: Advanced Python Concepts**  
+**Objective:** Learn advanced Python concepts such as error handling, file handling, regular expressions, decorators, generators, multithreading, and database interactions.  
+
+---
+
+## **1️⃣ Exception Handling (Try, Except, Finally)**
+Errors can cause programs to crash. Python handles errors using `try-except`.
+
+### **🔹 Basic Exception Handling**
+```python
+try:
+    x = 10 / 0  # Division by zero error
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+```
+✅ Output: `Cannot divide by zero!`
+
+### **🔹 Handling Multiple Exceptions**
+```python
+try:
+    num = int(input("Enter a number: "))  # ValueError possible
+    print(10 / num)  # ZeroDivisionError possible
+except ValueError:
+    print("Invalid input! Please enter a number.")
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+```
+
+### **🔹 Using `finally`**
+The `finally` block always executes, even if an error occurs.
+```python
+try:
+    f = open("data.txt", "r")
+    content = f.read()
+finally:
+    f.close()  # Ensures file is closed
+```
+
+---
+
+## **2️⃣ File Handling in Python**
+Python allows reading/writing files using the `open()` function.
+
+### **🔹 Opening a File**
+```python
+file = open("example.txt", "r")  # Open for reading
+content = file.read()
+print(content)
+file.close()
+```
+
+### **🔹 Writing to a File**
+```python
+with open("example.txt", "w") as file:
+    file.write("Hello, Python!\n")
+```
+✅ The `with` statement ensures the file is closed automatically.
+
+### **🔹 Appending to a File**
+```python
+with open("example.txt", "a") as file:
+    file.write("Appending a new line.\n")
+```
+
+### **🔹 Reading Files Line by Line**
+```python
+with open("example.txt", "r") as file:
+    for line in file:
+        print(line.strip())  # Removes extra spaces
+```
+
+---
+
+## **3️⃣ Regular Expressions (Regex)**
+Python's `re` module allows pattern matching.
+
+### **🔹 Matching Patterns**
+```python
+import re
+
+text = "My email is example@gmail.com"
+match = re.search(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b", text)
+if match:
+    print("Email found:", match.group())  # Output: example@gmail.com
+```
+
+### **🔹 Finding All Matches**
+```python
+text = "Phone numbers: 123-456-7890, 987-654-3210"
+matches = re.findall(r"\d{3}-\d{3}-\d{4}", text)
+print(matches)  # Output: ['123-456-7890', '987-654-3210']
+```
+
+### **🔹 Replacing Text**
+```python
+new_text = re.sub(r"apple", "orange", "I like apple pie")
+print(new_text)  # Output: I like orange pie
+```
+
+---
+
+## **4️⃣ Decorators (Modifying Functions)**
+Decorators **modify functions** without changing their code.
+
+### **🔹 Creating a Simple Decorator**
+```python
+def greet_decorator(func):
+    def wrapper():
+        print("Hello!")
+        func()
+        print("Goodbye!")
+    return wrapper
+
+@greet_decorator
+def say_name():
+    print("I'm Python.")
+
+say_name()
+```
+✅ Output:
+```
+Hello!
+I'm Python.
+Goodbye!
+```
+
+### **🔹 Using Decorators with Arguments**
+```python
+def repeat(times):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(times):
+                func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@repeat(3)
+def greet():
+    print("Hello!")
+
+greet()
+```
+✅ Output:
+```
+Hello!
+Hello!
+Hello!
+```
+
+---
+
+## **5️⃣ Generators (Efficient Iterators)**
+Generators **generate values on the fly** without storing them in memory.
+
+### **🔹 Creating a Generator**
+```python
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+for num in countdown(5):
+    print(num)
+```
+✅ Output:
+```
+5
+4
+3
+2
+1
+```
+
+### **🔹 Generator Expressions**
+```python
+squares = (x * x for x in range(5))
+print(list(squares))  # Output: [0, 1, 4, 9, 16]
+```
+
+---
+
+## **6️⃣ Multithreading (Parallel Execution)**
+Python's `threading` module runs tasks **simultaneously**.
+
+### **🔹 Creating Threads**
+```python
+import threading
+
+def print_numbers():
+    for i in range(5):
+        print(i)
+
+thread = threading.Thread(target=print_numbers)
+thread.start()
+thread.join()  # Wait for thread to finish
+```
+
+✅ Threads **run in parallel**, improving efficiency.
+
+---
+
+## **7️⃣ Working with Databases (SQLite3)**
+Python’s `sqlite3` module allows database interactions.
+
+### **🔹 Connecting to a Database**
+```python
+import sqlite3
+
+conn = sqlite3.connect("students.db")  # Creates or opens a database
+cursor = conn.cursor()
+```
+
+### **🔹 Creating a Table**
+```python
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS students (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER
+)
+""")
+conn.commit()
+```
+
+### **🔹 Inserting Data**
+```python
+cursor.execute("INSERT INTO students (name, age) VALUES (?, ?)", ("Alice", 22))
+conn.commit()
+```
+
+### **🔹 Fetching Data**
+```python
+cursor.execute("SELECT * FROM students")
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+```
+
+### **🔹 Closing the Connection**
+```python
+conn.close()
+```
+
+---
+
+## **🔚 Summary**
+| **Concept** | **Key Takeaways** |
+|------------|-----------------|
+| Exception Handling | Use `try-except-finally` to handle errors gracefully. |
+| File Handling | Read, write, and append to files using `open()`. |
+| Regular Expressions | Use `re` module for pattern matching. |
+| Decorators | Modify functions dynamically. |
+| Generators | Generate values **efficiently** using `yield`. |
+| Multithreading | Run tasks in **parallel** using `threading`. |
+| SQLite3 | Store and retrieve data using `sqlite3` database. |
+
+---
+
+## **🚀 Hands-on Exercises**
+✅ **1. Implement Exception Handling**
+Write a program that asks for user input and handles both `ValueError` and `ZeroDivisionError`.
+
+✅ **2. File Handling**
+Write a Python script that reads a file, counts the number of words, and saves the count in a new file.
+
+✅ **3. Regular Expressions**
+Extract all email addresses from a given text file.
+
+✅ **4. Create a Decorator**
+Write a decorator that logs function execution time.
+
+✅ **5. Use a Generator**
+Write a generator that yields Fibonacci numbers.
+
+✅ **6. Multithreading**
+Create two threads: one prints even numbers, and the other prints odd numbers.
+
+✅ **7. Database Handling**
+Create an SQLite database and store user information.
+
+---
+
+By mastering these advanced Python concepts, you’ll be well-prepared to build **efficient, scalable, and powerful** applications! 🚀🔥
